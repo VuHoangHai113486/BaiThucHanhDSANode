@@ -160,6 +160,7 @@ int main(){
 	    printf("\n2: Them nut vao cuoi danh sach");
 	    printf("\n3: Them nut vao sau mot nut khac trong danh sach");
 	    printf("\n4: Chen tang");
+	    printf("\n5: Tach ds sv mat tu cach");
 	    printf("\n9: Duyet ds");
 	    printf("\n0: Thoat");
 	    printf("\nMoi ban chon: ");
@@ -203,6 +204,13 @@ int main(){
             case 4:
             	chen_tang(&L , x);
             	break;
+            case 5:
+            	LList L1;
+				LList L2;
+				tach(L , &L1 , &L2);
+				processList(L1);
+				processList(L2);
+				break;	
             case 9: 
                 processList(L);
                 break;    
