@@ -91,6 +91,21 @@ void insert_After(LList *L , Node *q , Data x){
 	}
     
     
+    void chen_tang(LList *L , Data x){
+    	Node *pp = L->pHead ;
+    	Node *q;
+    	while(pp!=NULL && pp->infor.masv < x.masv){
+    		q = pp;
+    		pp = pp->link;
+		}
+		if(pp == L->pHead){
+			insert_Head(L , x);
+		}
+		else{
+			insert_After(L , q , x);
+		}
+	}
+    
 ///////////////////////////////////////
 void nhap(Data *x){
     printf("Nhap ma sv: ");
@@ -169,6 +184,8 @@ int main(){
 	            //..
             	break;
             }
+            case 4:
+            	chen_tang(&L , x);
             case 9: 
                 processList(L);
                 break;    
