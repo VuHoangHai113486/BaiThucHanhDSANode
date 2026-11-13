@@ -105,6 +105,21 @@ void insert_After(LList *L , Node *q , Data x){
 			insert_After(L , q , x);
 		}
 	}
+	
+	void tach(LList L , LList *L1 , LList *L2){
+		initList(L1);
+		initList(L2);
+		Node *pp = L.pHead;
+		while(pp != NULL){
+			if(pp->infor.d1 < 4 || pp->infor.d2 < 4 || pp->infor.d3 < 4){
+				insert_Head(L1 , pp->infor);
+			}
+			else{
+				insert_Head(L2, pp->infor);
+			}
+			pp=pp->link;
+		}
+	}
     
 ///////////////////////////////////////
 void nhap(Data *x){
@@ -144,6 +159,7 @@ int main(){
 	    printf("\n1: Them nut vao dau danh sach");
 	    printf("\n2: Them nut vao cuoi danh sach");
 	    printf("\n3: Them nut vao sau mot nut khac trong danh sach");
+	    printf("\n4: Chen tang");
 	    printf("\n9: Duyet ds");
 	    printf("\n0: Thoat");
 	    printf("\nMoi ban chon: ");
@@ -186,6 +202,7 @@ int main(){
             }
             case 4:
             	chen_tang(&L , x);
+            	break;
             case 9: 
                 processList(L);
                 break;    
